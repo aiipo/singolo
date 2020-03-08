@@ -22,7 +22,7 @@ p {
     Quote
 ******************/
 .get-quote {
-    padding: 68px 0 67px;
+    padding: 68px 0 16px;
     background-color: #f06c64;
     color: #f0d8d9;
 }
