@@ -1,0 +1,200 @@
+*,
+:before,
+:after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+.wrapper {
+    width: 940px;
+    margin: auto;
+}
+
+/*****************
+    Quote
+******************/
+.get-quote {
+    padding: 68px 0 67px;
+    background-color: #f06c64;
+    color: #f0d8d9;
+}
+
+.get-quote__title {
+    margin-bottom: 27px;
+    line-height: 0.6;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.get-quote__description {
+    margin-bottom: 44px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.get-quote__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-quote {
+    width: 620px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.form-quote__input,
+.form-quote__textarea
+{
+    padding: 7px 14px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 5px;
+    border-style: none;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    background-color: #d6564f;
+    color: inherit;
+    line-height: 1.8;
+}
+
+.form-quote__input {
+    margin-bottom: 16px;
+}
+
+.form-quote__input::placeholder,
+.form-quote__textarea::placeholder  {
+    color: #f48c8f;
+    font-size: 12px;
+}
+
+.form-quote__textarea {
+    padding-top: 6px;
+    height: 202px;
+    resize: none;
+}
+
+/*****************
+    Contact
+******************/
+
+.contact-text {
+    width: 300px;
+    display: flex;
+    flex-flow: column;
+}
+
+.contact__header {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.contact__main {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.contact__description {
+    margin-left: -2px;
+    margin-bottom: 23px;
+}
+
+.contact__address {
+    display: flex;
+    align-items: center;
+}
+
+.contact__address > a {
+    color: #f0d8d9;
+    text-decoration: none;
+}
+
+.contact__address > a:hover {
+    color: #9c8c8c;
+    text-decoration: underline;
+}
+
+.svg {
+    margin-right: 10px;
+    width: 13px;
+    height: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*****************
+    Footer
+******************/
+.footer {
+    line-height: 1.8;
+    background-color: #2d303a;
+}
+
+.footer__wrapper {
+    padding: 21px 0 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    display: inline-block;
+    color: #666d89;
+    font-size: 12px;
+}
+
+.social {
+    display: flex;
+}
+
+.social__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    margin-left: 8px;
+    border: 1px solid #69708b;
+    border-radius: 50%;
+}
+
+.social-facebook {
+    height: 14px;
+    width: 8px;
+    display: inline-block;
+    background-image: url("assets3/img/social/facebook.svg");
+}
+
+.social-google {
+    width: 14px;
+    height: 14px;
+    background-image: url("assets3/img/social/google+.svg");
+}
+
+.social-twitter {
+    height: 12px;
+    width: 14px;
+    background: url(./assets3/img/social/twitter.svg);
+}
+
+.social-linkedin {
+    width: 14px;
+    height: 14px;
+    background-image: url("./assets3/img/social/linkedin.svg");
+}
