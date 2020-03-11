@@ -1,0 +1,47 @@
+.icon-circle {
+  margin-top: 2px;
+  box-sizing: content-box;
+  height: 55px;
+  width: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $color-text-additional-2;
+  border-radius: 50%;
+}
+
+.ico_pen {
+  height: 32px;
+  width: 32px;
+  background: url("./assets/img/services/pen.svg");
+}
+
+.ico_bulb {
+  height: 32px;
+  width: 22px;
+  background: url("./assets/img/services/bulb.svg");
+}
+
+.ico_heart {
+  height: 28px;
+  width: 32px;
+  background: url("./assets/img/services/heart.svg");
+}
+
+.ico_phone {
+  height: 32px;
+  width: 22px;
+  background: url("./assets/img/services/phone.svg");
+}
+
+.ico_bubble {
+  height: 28px;
+  width: 32px;
+  background: url("./assets/img/services/bubble.svg");
+}
+
+.ico_star {
+  height: 32px;
+  width: 31px;
+  background: url("./assets/img/services/star.svg");
+}

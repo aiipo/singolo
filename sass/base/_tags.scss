@@ -1,0 +1,27 @@
+.tag {
+  @include font($size: 1.2rem, $height: 1.8, $weight: 400);
+  margin-right: 7px;
+  height: 23px;
+  border-radius: 5px;
+  border: 1px solid;
+  cursor: pointer;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &_selected {
+    padding: 2px 7px 4px 7px;
+    border-color: #c5c5c5;
+    color: #dedede;
+  }
+
+  &_bordered {
+    padding: 2px 5px 4px 6px;
+    border-color: $color-text-additional-1;
+    color: $color-text-additional-2;
+  }
+}
+
+
+

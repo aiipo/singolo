@@ -1,0 +1,31 @@
+.slider {
+  box-sizing: content-box;
+  height: $slider-height;
+  background: $color-background-slider;
+  //border-bottom: $border-bottom solid #ea676b;
+}
+
+.slider::after {
+  content: '';
+  display: block;
+  background-color: #ea676b;
+  height: $border-bottom-height;
+}
+
+.slider__wrapper {
+  height: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.photo {
+  //padding: 53px 55px 58px 54px;
+  flex-basis: 798px;
+}
+
+.iphone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

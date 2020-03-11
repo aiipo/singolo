@@ -1,0 +1,113 @@
+.get-quote {
+  background-color: #f06c64;
+  color: #f0d8d9;
+}
+
+.get-quote__wrapper {
+  padding: 63px 0 15px;
+}
+
+.get-quote__title {
+  margin-bottom: 20px;
+  letter-spacing: -0.02rem;
+}
+
+.get-quote__description {
+  margin-bottom: 44px;
+  @include font($size: 1.8rem, $height: 1.7, $weight: 300);
+  text-align: justify;
+}
+
+.get-quote__form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-quote {
+  width: 620px;
+  @include font($size: 1.2rem, $height: 1.8, $weight: 400);
+}
+
+.form-quote__input,
+.form-quote__textarea
+{
+  padding: 8px 14px;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 5px;
+  border-style: none;
+  @include font($size: inherit, $weight: 400);
+  background-color: $color-background-get-quote;
+  color: inherit;
+}
+
+.form-quote__input {
+  margin-bottom: 16px;
+}
+
+.form-quote__input::placeholder,
+.form-quote__textarea::placeholder  {
+  color: #f48c8f;
+  @include font($size: 1.2rem, $height: 2.156rem, $weight: normal);
+}
+
+.form-quote__textarea {
+  padding-top: 9px;
+  height: 202px;
+  resize: none;
+}
+
+.form-quote__submit  {
+  cursor: pointer;
+  background-color: darken($color-background-get-quote, 4%);
+}
+
+/*****************
+    Contact
+******************/
+
+.contact-text {
+  width: 300px;
+  display: flex;
+  flex-flow: column;
+}
+
+.contact__header {
+  margin-bottom: 10px;
+  letter-spacing: -0.01rem;
+}
+
+.contact__main {
+  @include font($size: 1.2rem, $height: 2.156rem, $weight: 400);
+  text-align: justify;
+}
+
+.contact__description {
+  margin-bottom: 23px;
+  letter-spacing: -0.01rem;
+}
+
+.contact__address {
+  display: flex;
+  align-items: center;
+}
+
+.contact__address > a {
+  color: #f0d8d9;
+  text-decoration: none;
+}
+
+.contact__address > a:hover {
+  color: #9c8c8c;
+  text-decoration: underline;
+}
+
+.svg {
+  margin-right: 10px;
+  width: 13px;
+  height: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
