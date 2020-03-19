@@ -1,0 +1,8 @@
+.layout-3-column {
+  @include columns($width: 31.915%);
+  &:after {
+    content: '';
+    width: 31.915%;
+    display: block;
+  }
+}

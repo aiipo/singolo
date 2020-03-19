@@ -1,0 +1,145 @@
+.slider {
+  box-sizing: content-box;
+  height: $slider-height;
+  background: $color-background-slider;
+}
+
+.carousel {
+  text-align: center;
+}
+
+.control {
+  width: 4%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider::after {
+  content: '';
+  display: block;
+  background-color: #ea676b;
+  height: $border-bottom-height;
+}
+
+.slider__wrapper {
+  height: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.items-container {
+  width: 798px;
+  overflow: hidden;
+  position: relative;
+}
+
+.item {
+  display: none;
+  position: relative;
+  animation: 0.5s ease-in-out;
+  margin: 0 auto;
+}
+
+.active,
+.next {
+  display: block;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.iphone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .iphone__layout {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .iphone__screen,
+  .iphone__home-btn {
+    position: absolute;
+    z-index: 2;
+  }
+
+  .iphone__home-btn {
+    border-radius: 50%;
+  }
+
+  .iphone_vertical {
+    .iphone__home-btn {
+      bottom: 8%;
+      left: 11.4%;
+    }
+
+    .iphone__screen {
+      left: 1.5%;
+      top: 13%;
+    }
+  }
+
+  .iphone__screen-disabled {
+    filter: brightness(0) opacity(1) drop-shadow(0 0 0 rgb(0, 0, 0));
+  }
+
+  .iphone_horizontal {
+    transform: rotate(90deg) translateY(31%);
+
+    .iphone__home-btn {
+      transform: rotate(90deg);
+      bottom: 8%;
+      left: 36%;
+    }
+
+    .iphone__screen {
+      transform: rotate(-90deg) translate(-38.5%, -31.5%);
+    }
+
+    .iphone__shadow {
+      transform: scale(1, -1) translateY(24px);
+    }
+  }
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}

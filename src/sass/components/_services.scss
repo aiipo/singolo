@@ -1,0 +1,54 @@
+.services {
+  background-color: $color-background-services;
+}
+
+.services::after {
+  content: '';
+  display: block;
+  background-color: white;
+  height: $border-bottom-height;
+}
+
+.services__wrapper {
+  padding: 63px 0 57px;
+}
+
+.services__title {
+  color: $color-text-additional-1;
+  margin-bottom: 21px;
+  letter-spacing: -0.02rem;
+}
+
+.services__description {
+  padding-bottom: 22px;
+  color: $color-text-additional-2;
+  @include font($size: 1.8rem, $height: 3rem, $weight: 300);
+  text-align: justify;
+}
+
+.service {
+  margin: 23px 0 7px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+
+  .service-text {
+    max-width: 220px;
+  }
+
+  .service-title {
+    margin-bottom: 11px;
+    color: $color-text-additional-1;
+  }
+
+  .service-description {
+    @include font($size: 1.2rem, $height: 2.15rem, $weight: 400);
+    color: $color-text-additional-2;
+    text-align: justify;
+  }
+}
+
+
+
+
+

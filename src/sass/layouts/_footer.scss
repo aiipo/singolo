@@ -1,0 +1,17 @@
+.footer {
+  background-color: $color-background-footer;
+}
+
+.footer__wrapper {
+  padding-top: 22px;
+  padding-bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  display: inline-block;
+  color: $color-text-additional-1;
+  @include font($size: 1.2rem, $height: 1.8);
+}
