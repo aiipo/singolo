@@ -8,10 +8,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .social {
+    @include media-mobile {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 }
 
 .copyright {
   display: inline-block;
   color: $color-text-additional-1;
   @include font($size: 1.2rem, $height: 1.8);
+
+  @include media-mobile {
+    display: none;
+  }
 }

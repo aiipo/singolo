@@ -11,6 +11,12 @@
 
 .services__wrapper {
   padding: 63px 0 57px;
+
+  .layout-3-column {
+    @include media-mobile {
+      flex-direction: column;
+    }
+  }
 }
 
 .services__title {
@@ -30,10 +36,18 @@
   margin: 23px 0 7px;
   width: 300px;
   display: flex;
-  justify-content: space-between;
+
+    @include media-mobile {
+      width: auto;
+    }
 
   .service-text {
+    margin-left: 20px;
     max-width: 220px;
+
+    @include media-mobile {
+      max-width: fit-content;
+    }
   }
 
   .service-title {

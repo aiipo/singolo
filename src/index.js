@@ -9,16 +9,21 @@ window.onload = () => {
     document.querySelector('.navigation').addEventListener('click', navigationLinks);
     document.querySelector('.iphone').addEventListener('click', toggleIphoneScreen);
     window.addEventListener('scroll', scrollPage);
+    document.querySelector('.header__hamburger').addEventListener('click', toggleNavigation);
 };
+
+function toggleNavigation() {
+    this.classList.toggle('expanded');
+    let nav = document.querySelector('.header__navigation');
+    nav.classList.toggle('expanded');
+}
 
 function toggleIphoneScreen(event) {
     if (event.target.classList.contains('iphone__home-btn')) {
         let parent = event.target.closest('div');
         let getScreen = parent.querySelector('.iphone__screen');
         if (getScreen) {
-            if (getScreen.classList.contains('iphone__screen-disabled'))
-                getScreen.classList.remove('iphone__screen-disabled');
-            else getScreen.classList.add('iphone__screen-disabled');
+            getScreen.classList.toggle('iphone__screen-disabled');
         }
     }
 }

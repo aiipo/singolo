@@ -26,14 +26,29 @@
   margin-bottom: 8px;
 }
 
-.employee {
-  margin-top: 37px;
-  width: 300px;
+.layout-3-column {
+  .employee {
+    margin-top: 37px;
+    width: 300px;
+
+    @include media-tablet {
+      max-width: 32%;
+    }
+    @include media-mobile {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+  }
+}
+
+.employee__content {
+
 }
 
 .employee__photo {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: auto;
 }
 
 .employee__name {

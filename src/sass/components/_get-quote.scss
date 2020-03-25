@@ -20,12 +20,17 @@
 
 .get-quote__form {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
+
+  @include media-mobile {
+    flex-wrap: wrap;
+  }
 }
 
 .form-quote {
   width: 620px;
+  flex-shrink: 2;
   @include font($size: 1.2rem, $height: 1.8, $weight: 400);
 }
 
@@ -68,9 +73,15 @@
 ******************/
 
 .contact-text {
+  padding-left: 20px;
   width: 300px;
   display: flex;
   flex-flow: column;
+
+  @include media-mobile {
+    padding-left: 0;
+    width: 100%;
+  }
 }
 
 .contact__header {

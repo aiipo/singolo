@@ -45,6 +45,11 @@ a.anchor {
   color: #ffffff;
   @include font($size: 2.5rem, $height: 1.2, $weight: 400);
   letter-spacing: -0.02em;
+
+  @include media-mobile {
+    position: relative;
+    left: calc(50% - 45px);
+  }
 }
 
 .logo:after {
@@ -52,15 +57,47 @@ a.anchor {
   color: #d6645e;
 }
 
+.header__navigation {
+  @include media-mobile {
+    position: absolute;
+    left: -$hamburger-navigation-width;
+    top: 93%;
+    width: $hamburger-navigation-width;
+    height: 100vh;
+    background: $color-header;
+    @include transition(left 0.5s ease-in-out);
+
+    &.expanded {
+      left: 0;
+    }
+
+  }
+}
+
 .navigation {
   padding-top: 12px;
   display: flex;
   text-transform: uppercase;
   @include font($size: 1.2rem);
+
+  @include media-mobile {
+    position: absolute;
+    top: 179px;
+    right: 0;
+    width: 205px;
+    display: block;
+    @include font($size: 2.4rem, $height: 2.9rem);
+  }
 }
 
 .nav__link {
   list-style: none;
+  @include media-mobile {
+    padding-top: 27px;
+    &:first-child {
+      padding-top: 0;
+    }
+  }
 }
 
 .nav__link:before {
@@ -71,6 +108,10 @@ a.anchor {
   padding-right: 12.2px;
   color: $color-text;
   @include font($size: 0.5rem);
+
+  @include media-mobile {
+    content: none;
+  }
 }
 
 .nav__link:first-child:before {
