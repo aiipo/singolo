@@ -492,7 +492,8 @@ h3 {
   margin-top: 2px;
   box-sizing: content-box;
   height: 55px;
-  width: 55px;
+  max-width: 55px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1133,8 +1134,8 @@ div[class^=portfolio-work-] {
 }
 
 .slider {
-  box-sizing: content-box;
-  height: 600px;
+  max-height: 600px;
+  height: 59vw;
   background: #f06c64;
 }
 
@@ -1143,9 +1144,9 @@ div[class^=portfolio-work-] {
 }
 
 .control {
+  position: relative;
   width: 4%;
   height: 100%;
-  position: relative;
   cursor: pointer;
 }
 
@@ -1157,28 +1158,34 @@ div[class^=portfolio-work-] {
 }
 
 .slider__wrapper {
-  height: 98%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 
 .items-container {
-  width: 798px;
-  overflow: hidden;
   position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .item {
-  display: none;
-  position: relative;
-  animation: 0.5s ease-in-out;
+  position: absolute;
   margin: 0 auto;
+  display: none;
+  height: 100%;
+  width: 100%;
+  animation: 0.5s ease-in-out;
 }
 
 .active,
 .next {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .next {
@@ -1191,43 +1198,93 @@ div[class^=portfolio-work-] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
+  max-height: 483px;
+  width: 100%;
+  max-width: 796px;
 }
 .iphone .iphone__layout {
-  position: absolute;
+  position: relative;
   z-index: 1;
+  height: 45vw;
+  max-height: 458px;
+  width: 21.2vw;
+  max-width: 216px;
 }
-.iphone .iphone__screen,
-.iphone .iphone__home-btn {
+.iphone .iphone__screen {
   position: absolute;
   z-index: 2;
 }
 .iphone .iphone__home-btn {
+  position: absolute;
+  z-index: 2;
   border-radius: 50%;
+  width: 22%;
+  height: 9.5%;
+  cursor: pointer;
 }
-.iphone .iphone_vertical .iphone__home-btn {
-  bottom: 8%;
-  left: 11.4%;
+.iphone .iphone_vertical,
+.iphone .iphone_horizontal {
+  position: relative;
+}
+.iphone .iphone_vertical .iphone__shadow,
+.iphone .iphone_horizontal .iphone__shadow {
+  position: absolute;
+  height: 104.007%;
+  width: 111.115%;
+}
+.iphone .iphone_vertical {
+  top: -16px;
+  max-width: 216px;
+}
+@media (max-width: 1019px) {
+  .iphone .iphone_vertical {
+    top: 0;
+  }
 }
 .iphone .iphone_vertical .iphone__screen {
-  left: 1.5%;
-  top: 13%;
+  left: 6%;
+  top: 14%;
+  width: 88.5%;
+  height: 72.5%;
+  max-height: 333px;
+  max-width: 188px;
+}
+.iphone .iphone_vertical .iphone__home-btn {
+  bottom: 4%;
+  left: 39.5%;
+}
+.iphone .iphone_vertical .iphone__shadow {
+  left: 0;
 }
 .iphone .iphone__screen-disabled {
   filter: brightness(0) opacity(1) drop-shadow(0 0 0 black);
 }
 .iphone .iphone_horizontal {
+  top: -16px;
+  right: 5px;
+  max-width: 459px;
   transform: rotate(90deg) translateY(31%);
+}
+@media (max-width: 1019px) {
+  .iphone .iphone_horizontal {
+    top: 0;
+  }
 }
 .iphone .iphone_horizontal .iphone__home-btn {
   transform: rotate(90deg);
-  bottom: 8%;
-  left: 36%;
+  bottom: 3%;
+  left: 39%;
 }
 .iphone .iphone_horizontal .iphone__screen {
-  transform: rotate(-90deg) translate(-38.5%, -31.5%);
+  transform: rotate(-90deg) translate(-41%, -147.5%);
+  width: 33.5vw;
+  max-width: 333px;
+  height: 18.5vw;
+  max-height: 188px;
 }
 .iphone .iphone_horizontal .iphone__shadow {
-  transform: scale(1, -1) translateY(24px);
+  transform: scale(1, -1) translate(-90%, 7%);
 }
 
 .to-left {

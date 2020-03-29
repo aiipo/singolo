@@ -1,6 +1,7 @@
 .slider {
-  box-sizing: content-box;
-  height: $slider-height;
+  //box-sizing: content-box;
+  max-height: $slider-height;
+  height: 59vw;;
   background: $color-background-slider;
 }
 
@@ -9,9 +10,9 @@
 }
 
 .control {
+  position: relative;
   width: 4%;
   height: 100%;
-  position: relative;
   cursor: pointer;
 }
 
@@ -23,28 +24,36 @@
 }
 
 .slider__wrapper {
-  height: 98%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 
 .items-container {
-  width: 798px;
-  overflow: hidden;
   position: relative;
+  //padding-right: calc(10% + 12px);
+  //padding-left: 36px;
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .item {
-  display: none;
-  position: relative;
-  animation: 0.5s ease-in-out;
+  position: absolute;
   margin: 0 auto;
+  display: none;
+  height: 100%;
+  width: 100%;
+  animation: 0.5s ease-in-out;
 }
 
 .active,
 .next {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .next {
@@ -57,31 +66,69 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
+  max-height: 483px;
+  width: 100%;
+  max-width: 796px;
 
   .iphone__layout {
-    position: absolute;
+    position: relative;
     z-index: 1;
+    height: 45vw;
+    max-height: 458px;
+    width: 21.2vw;
+    max-width: 216px;
   }
 
-  .iphone__screen,
-  .iphone__home-btn {
+  .iphone__screen {
     position: absolute;
     z-index: 2;
   }
 
   .iphone__home-btn {
+    position: absolute;
+    z-index: 2;
     border-radius: 50%;
+    width: 22%;
+    height: 9.5%;
+    cursor: pointer;
+  }
+
+  .iphone_vertical,
+  .iphone_horizontal {
+    position: relative;
+
+    .iphone__shadow {
+      position: absolute;
+      height: 104.007%;
+      width: 111.115%;
+    }
   }
 
   .iphone_vertical {
-    .iphone__home-btn {
-      bottom: 8%;
-      left: 11.4%;
+    top: -16px;
+    max-width: 216px;
+
+    @include media-tablet {
+      top: 0;
     }
 
     .iphone__screen {
-      left: 1.5%;
-      top: 13%;
+      left: 6%;
+      top: 14%;
+      width: 88.5%;
+      height: 72.5%;
+      max-height: 333px;
+      max-width: 188px;
+    }
+
+    .iphone__home-btn {
+      bottom: 4%;
+      left: 39.5%;
+    }
+
+    .iphone__shadow {
+      left: 0;
     }
   }
 
@@ -90,20 +137,31 @@
   }
 
   .iphone_horizontal {
+    top: -16px;
+    right: 5px;
+    max-width: 459px;
     transform: rotate(90deg) translateY(31%);
+
+    @include media-tablet {
+      top: 0;
+    }
 
     .iphone__home-btn {
       transform: rotate(90deg);
-      bottom: 8%;
-      left: 36%;
+      bottom: 3%;
+      left: 39%;
     }
 
     .iphone__screen {
-      transform: rotate(-90deg) translate(-38.5%, -31.5%);
+      transform: rotate(-90deg) translate(-41%, -147.5%);
+      width: 33.5vw;
+      max-width: 333px;
+      height: 18.5vw;
+      max-height: 188px;
     }
 
     .iphone__shadow {
-      transform: scale(1, -1) translateY(24px);
+      transform: scale(1, -1) translate(-90%, 7%);;
     }
   }
 }
