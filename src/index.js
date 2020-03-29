@@ -4,7 +4,7 @@ import { QuoteModal } from "./js/QuoteModal";
 window.onload = () => {
     new Carousel();
     document.querySelector('.portfolio-tags').addEventListener('click', selectPortfolioTag);
-    document.querySelector('.portfolio-works-container').addEventListener('click', selectPortfolioImg);
+    document.querySelector('.portfolio-works-container').addEventListener('click', selectPortfolio);
     document.querySelector('.form-quote__submit').addEventListener('click', submitQuote);
     document.querySelector('.navigation').addEventListener('click', navigationLinks);
     document.querySelector('.iphone').addEventListener('click', toggleIphoneScreen);
@@ -92,18 +92,18 @@ function selectPortfolioTag(event) {
         let clickedTag = event.target;
         removeSelectedTags();
         selectClickedTag(clickedTag);
-        if (clickedTag.innerText === "All")
-            showAllPortfolios();
-        else filterBySelectedTag(clickedTag.innerText);
+        shufflePortfolios();
     }
 }
 
 function removeSelectedTags() {
     let tags = document.querySelectorAll('.portfolio-tags .tag');
-    tags.forEach(tag => {
-        tag.classList.remove('tag_selected');
-        tag.classList.add('tag_bordered');
-    });
+    if (tags) {
+        tags.forEach(tag => {
+            tag.classList.remove('tag_selected');
+            tag.classList.add('tag_bordered');
+        });
+    }
 }
 
 function selectClickedTag (clickedTag) {
@@ -111,41 +111,33 @@ function selectClickedTag (clickedTag) {
     clickedTag.classList.remove('tag_bordered');
 }
 
-function showAllPortfolios () {
+function shufflePortfolios() {
     let portfolios = document.querySelectorAll('.portfolio-works-container > *');
-    portfolios.forEach(portfolio => {
-        portfolio.classList.remove('portfolio_hidden');
-    });
+    if (portfolios) {
+        portfolios.forEach(portfolio =>
+            portfolio.className = `portfolio-work-${Math.ceil(Math.random() * 12)}`
+        );
+    }
 }
 
-function filterBySelectedTag (selectedTag) {
-    let portfolios = document.querySelectorAll('.portfolio-works-container > *');
-    portfolios.forEach(portfolio => {
-        portfolio.classList.add('portfolio_hidden');
-        if (portfolio.getAttribute('data-tag') === selectedTag) portfolio.classList.remove('portfolio_hidden');
-    });
+function selectPortfolio(event) {
+    let portfolios = document.querySelectorAll('img[class^="portfolio-work-"]');
+    if (portfolios) {
+        portfolios.forEach(portfolio => {
+            if (event.target.classList.contains(portfolio.className)) {
+                unselectPortfolios(portfolios);
+                event.target.classList.add('portfolio_selected');
+            }
+        });
+    }
 }
 
-function selectPortfolioImg(event) {
-    let portfolios = document.querySelectorAll('div[class^="portfolio-work-"]');
-    unselectPortfolios();
-    portfolios.forEach(portfolio => {
-        if (event.target.classList.contains(portfolio.className)) {
-            selectPortfolio(portfolio);
-        }
-    });
-}
-
-function unselectPortfolios() {
-    let portfolios = document.querySelectorAll('div[class^="portfolio-work-"]');
-    portfolios.forEach(portfolio => {
-        portfolio.classList.remove('portfolio_selected');
-    });
-}
-
-function selectPortfolio(selectedPortfolio) {
-    selectedPortfolio.classList.add('portfolio_selected');
-
+function unselectPortfolios(portfolios) {
+    if (portfolios) {
+        portfolios.forEach(portfolio => {
+            portfolio.classList.remove('portfolio_selected');
+        });
+    }
 }
 
 /******************

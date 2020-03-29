@@ -30,43 +30,41 @@
 }
 
 .portfolio-works-container {
+  max-width: 959px;
   width: calc(100% + 19px);
-  height: 621px;
-  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-
-  @include media-tablet {
-    height: 828px;
-  }
 }
 
-div[class^="portfolio-work-"] {
+img[class^="portfolio-work-"] {
   margin-top: 20px;
   margin-right: 19px;
-  flex-grow: 1;
-  flex-basis: 25%;
-  max-width: 220px;
-  height: 100%;
+  flex: 1 0 20%;
+  height: 23.9vw;
   max-height: 187px;
-  background-size: cover;
+  cursor: pointer;
+  &:nth-child(n + 13) {
+    display: none;
+  }
+
   @include media-tablet {
-    max-width: 33.333%;
+    width: 30%;
+    flex-basis: 25%;
   }
 
   @include media-mobile {
-    &:nth-child(2n) {
-      margin-right: 0;
-    }
+    flex-basis: 31%;
+    height: 34.118vw;
 
-    max-width: 46%;
-    flex-basis: 50%;
+    &:nth-child(n + 9) {
+      display: none;
+    }
   }
 }
 
 .portfolio_selected {
-  border: $border-width solid $border-selected-color;
+  outline: $border-width solid $border-selected-color;
 }
 
 .portfolio_hidden {
